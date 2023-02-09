@@ -49,12 +49,12 @@ public class BrowserView : MonoBehaviour
     /// <summary>
     /// There's no normal browser substring because it is anything but the youtube.com/tv one.
     /// </summary>
-    private const string YoutubeSubstring = "youtube.com/tv";
+    private const string YoutubeSubstring = "youtube.com/";
 
     public static readonly Dictionary<BrowserHistoryType, string> DefaultUrls =
         new Dictionary<BrowserHistoryType, string>()
         {
-            {BrowserHistoryType.Browser, "https://www.google.com"},
+            {BrowserHistoryType.Browser, "https://spotify-vuplex-v2.vercel.app/"},
             {BrowserHistoryType.Youtube, "https://www." + YoutubeSubstring},
         };
 
@@ -118,7 +118,7 @@ public class BrowserView : MonoBehaviour
     {
         if (UrlInputField.text == "")
         {
-            LoadURL("google.com");
+            LoadURL("https://spotify-vuplex-v2.vercel.app/");
         }
 
         string potentialUrl = UrlInputField.text;
@@ -133,10 +133,7 @@ public class BrowserView : MonoBehaviour
             string searchUrl = "https://www.google.com/search?q=" + encodedSearchString;
             LoadURL(searchUrl);
         }
-
     }
-
-        
 
     // PLUGIN METHODS:
 
